@@ -1,0 +1,46 @@
+<!--html>(head>meta[charset=${charset}]+title{${1:Document}})+body-->
+<html>
+  
+<head>
+    <meta charset="UTF-8">
+    <title>NextBus</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+
+</head>
+<body>
+  
+  <td class="col-md-6" style="text-align:center">
+    <tr>
+      <h1 style="font-size:650%">Ola blz</h1>
+    </tr>
+    <tr><h1 style="font-size:650%"><a id ="y" href='#' style="text-decoration:none">Jardim Caçula</a></h1></tr>
+    <h1 id="nb"></h1> 
+
+  </td>  
+
+</body>
+<script>
+      
+    $(document).ready(function(){
+      $('#y').bind('click',function(){
+        var myClock = new Date();
+        var now = myClock.getHours()+""+myClock.getMinutes();
+        var horaCacula = ['2109','2115'];
+        
+        $(horaCacula).each(function(s){
+            if(this.s < now){
+            $('#nb').text("Próximo Bus chegará as " + s);
+          }else{
+            $('#nb').text("Não tem onibus agora" );  
+          }
+        })
+      })
+    });
+    console.log('###Fim####');
+    
+</script>
+</html>
