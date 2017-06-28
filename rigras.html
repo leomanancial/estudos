@@ -1,0 +1,59 @@
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8" /> 
+    <title>Testando</title>
+
+   <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script type="text/javascript">
+     console.log('inicio');
+    (function(){
+       
+       $.ajax({
+          url: 'http://www.rigras.com.br/linhas_detalhes.asp?id=17', // página da requisição externa
+          type: 'GET',
+          // parâmetro "html" vem com o conteúdo da página completo
+          success: function(html) {
+
+           // Pegamos somente <li> da página externa
+            var $lis = $(html).load('#tabelab');
+
+           // Mandamos para o elemento de id "cabecalho" da nossa página
+            $("#cabecalho").html($lis);
+        }
+      }); 
+    });
+     console.log('fim');
+    </script>
+</head>
+<body>
+     <div id="cabecalho">Aqui</div>
+</body>
+</html>-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rigras load</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<b>Linhas:</b>
+<p id="conteudo"></p>
+ 
+<script>
+  
+$('#conteudo').find("www.rigras.com.br" .div );
+</script>
+ 
+</body>
+</html>

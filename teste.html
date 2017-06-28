@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rigras load</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <?php echo file_get_contents($_GET['url']); ?>
+</head>
+<body>
+    
+<span>Nome do arquivo</span><input type="text" id="arquivo">
+<button id="carregar">Carrega o conteúdo HTML</button>
+<div id="minhaDiv"></div>
+<script>
+$(document).ready(function(){
+$('#carregar').click(function(){
+var arquivo = $('#arquivo').val();
+$('#minhaDiv').load('captura.php?url=' + arquivo);
+});
+});
+</script>
+</body>
+</html>

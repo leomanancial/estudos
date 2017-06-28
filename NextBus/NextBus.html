@@ -15,7 +15,7 @@
   
   <td class="col-md-6" style="text-align:center">
     <tr>
-      <h1 style="font-size:650%">Ola blz</h1>
+      <h1 style="font-size:650%">NextBus</h1>
     </tr>
     <tr><h1 style="font-size:650%"><a id ="y" href='#' style="text-decoration:none">Jardim Caçula</a></h1></tr>
     <h1 id="nb"></h1> 
@@ -24,23 +24,25 @@
 
 </body>
 <script>
-      
     $(document).ready(function(){
       $('#y').bind('click',function(){
         var myClock = new Date();
         var now = myClock.getHours()+""+myClock.getMinutes();
-        var horaCacula = ['2109','2115'];
+        var horaCacula = ['2329','2334','2338','2339'];
+        var mostrahora = [];
         
-        $(horaCacula).each(function(s){
-            if(this.s < now){
-            $('#nb').text("Próximo Bus chegará as " + s);
-          }else{
-            $('#nb').text("Não tem onibus agora" );  
+        for (var i =0; i <horaCacula.length;i++ ){
+        //for (let i in horaCacula.length){
+          if( now <= horaCacula[i] ){
+            mostrahora.push(horaCacula[i])
           }
-        })
-      })
+        }
+        if( mostrahora[0] != null){
+          $('#nb').text("Próximo onibus às " + mostrahora[0]);
+        }else{
+          $('#nb').text("Não tem mais ônibus");
+        }
+      });
     });
-    console.log('###Fim####');
-    
 </script>
 </html>
