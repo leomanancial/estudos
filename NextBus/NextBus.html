@@ -46,18 +46,15 @@
         for (var i =0; i <horaCacula.length;i++ ){ 
           if( now <= horaCacula[i] ){ // Verifica todos os horários da Tabela igual ou maior a hora local
             mostrahora.push(horaCacula[i]) // Adiciona a Segunda lista os horários acima da hora local
-            console.log("adicionada no array")
           }
         }
         if( mostrahora[0] != null){
           $('#nb').text("Próximo ônibus às " + mostrahora[0]); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
      
-          
         }else{
           $('#nb').text("Não tem mais ônibus");// Caso tenha chegado ao fim da tabela, não exibe msg
         }
         mostrahora.splice(0, Number.MAX_VALUE); //Limpa a segunda lista para não conflitar
-        console.log("removido do array")
       });
     });
 </script>
