@@ -50,9 +50,14 @@
           }
         }
         if( mostrahora[0] != null){
-          var h = mostrahora[0].toString().substring(0,2);
+          var h = mostrahora[0].toString().substring(0,1);
           var m = mostrahora[0].toString().substring(2,4);
-          $('#nb').text("Próximo ônibus às " + h +":"+ m); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
+          console.log(h)
+          if(h<10 && m < 10){
+            $('#nb').text("Próximo ônibus às "+"0" + h +":"+"0" + m); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
+          }else{
+            $('#nb').text("Próximo ônibus às "+ h +":"+ m); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
+          }
           
         }else{
           $('#nb').text("Não tem mais ônibus");// Caso tenha chegado ao fim da tabela, não exibe msg
