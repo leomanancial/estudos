@@ -1,6 +1,7 @@
  //Esse script ficara separado
     $(document).ready(function(){
-        $('#y').bind('click',function(){    
+        $("a").bind('click',function(){ 
+        var tabela = this.id;      
         var myClock = new Date();
         var hour = myClock.getHours();
         var min = '';
@@ -10,10 +11,13 @@
           var min = myClock.getMinutes();
         }
         var now = hour+''+min;
-        console.log(now);
+        //console.log(tabela);
         //Tabela tem que ir para o Json separada
-        //var horaCacula = [0425,0445,0505,0525,0545,0605,0625,0640,0705,0725,0745,0805,0845,0910,0925,1000,1025,1100,1120,1140,1200,1220,1240,1300,1320,1340,1400,1420,1440,1500,1520,1540,1600,1620,1645,1705,1725, 1745,1810,1830,1850,1915,1940,2020,2100,2140,2210,2245,2320,2355,0010];
+        if(tabela == 'Cacula'){
         var horaCacula = [425,445,505,525,545,605,625,640,705,725,745,805,845,910,925,1000,1025,1100,1120,1140,1200,1220,1240,1300,1320,1340,1400,1420,1440,1500,1520,1540,1600,1620,1645,1705,1725, 1745,1810,1830,1850,1915,1940,2020,2100,2140,2210,2245,2320,2355,0010];
+        }else{
+          $('#nb').text("Calma ta chegando");
+        }
         var mostrahora = []; //Segunda lista que é adicionada os horários maiores que a hora local
         
         for (var i =0; i <horaCacula.length;i++ ){ 
@@ -22,7 +26,7 @@
           }
         }
         if( mostrahora[0] < 999){//verifica se a hora tem menos que tres digitos pegar no substring
-          console.log("pt1")
+          //console.log("pt1")
           var h = mostrahora[0].toString().substring(0,1);
           var m = mostrahora[0].toString().substring(1,4);
           //console.log(m)
