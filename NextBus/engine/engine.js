@@ -35,11 +35,13 @@
           var m = mostrahora[0].toString().substring(1,4);
           //console.log(m)
           $('#nb').text("Próximo ônibus às "+h+":"+m); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
-        }else{
+        }else if ( mostrahora[0] > 999){
          // console.log("pt2")
           var h = mostrahora[0].toString().substring(0,2);
           var m = mostrahora[0].toString().substring(2,4);
             $('#nb').text("Próximo ônibus às "+h+":"+m); // Mostra o primeiro horário da Segunda lista, ou seja o próximo horário
+        }else{
+            $('#nb').text("Não tem mais onibus");
         }
         mostrahora.splice(0, Number.MAX_VALUE); //Limpa a segunda lista para não conflitar
       });
